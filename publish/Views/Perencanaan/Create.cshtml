@@ -1,0 +1,204 @@
+﻿@model PETROKIMIA.Models.KEGIATAN
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!-- Content Wrapper. Contains page content -->
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Tambah <b>Kegiatan</b>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Rencana Kegiatan</li>
+    </ol>
+</section>
+
+<section class="content" style="min-height: 820px">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Kegiatan</h3>
+                </div>
+                <!-- /.box-header -->
+                <!-- form start -->
+                @using (Html.BeginForm("Create", "Perencanaan", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="box-body">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-wrap">
+                                    <div class="col-md-4">
+                                        <div class="form-group" style="padding-right:15px;padding-left:15px">
+                                            <label>Jenis Kegiatan</label>
+                                            @Html.DropDownListFor(model => model.ID_JENIS, ViewBag.s_keg as IEnumerable<SelectListItem>, null, new { @class = "form-control select2", @placeholder = "Semua", @required = true })
+                                            @Html.ValidationMessageFor(model => model.ID_JENIS, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group" style="padding-right:15px;padding-left:15px">
+                                            <label>Pilih Departemen</label>
+                                            @Html.DropDownListFor(model => model.ID_DEPT, ViewBag.s_dep as IEnumerable<SelectListItem>, null, new { @class = "form-control select2", @placeholder = "Semua", @required = true })
+                                            @Html.ValidationMessageFor(model => model.ID_DEPT, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group" style="padding-right:15px;padding-left:15px">
+                                            <label>PKPT / non PKPT</label>
+                                            @Html.DropDownListFor(model => model.PKPT, ViewBag.s_pkpt as IEnumerable<SelectListItem>, null, new { @class = "form-control select2", @placeholder = "Semua", @required = true })
+                                            @Html.ValidationMessageFor(model => model.PKPT, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">Nama Kegiatan:</label>
+                                    <div class="col-md-8">
+                                        @Html.EditorFor(model => model.NAMA, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nama Kegiatan", @required = true } })
+                                        @Html.ValidationMessageFor(model => model.NAMA, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">Tanggal Mulai:</label>
+                                    <div class="col-md-8">
+                                        @Html.EditorFor(model => model.TGL_MULAI, new { htmlAttributes = new { @class = "datepicker form-control", @placeholder = "Tanggal Mulai", @data_date_format = "  dd M yyyy", @required=true } })
+                                        @Html.ValidationMessageFor(model => model.TGL_MULAI, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">Tanggal Selesai:</label>
+                                    <div class="col-md-8">
+                                        @Html.EditorFor(model => model.TGL_SELESAI, new { htmlAttributes = new { @class = "form-control datepicker", @placeholder = "Tanggal Selesai", @data_date_format = "  dd M yyyy", @required = true } })
+                                        @Html.ValidationMessageFor(model => model.TGL_SELESAI, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">Peng. Teknis:</label>
+                                    <div class="col-md-8">
+                                        @Html.DropDownListFor(model => model.ID_PENGENDALI, ViewBag.s_user as IEnumerable<SelectListItem>, null, new { @class = "form-control select2", @placeholder = "Semua", @required = true })
+                                        @Html.ValidationMessageFor(model => model.ID_PENGENDALI, "", new { @class = "text-danger" })
+                                    </div>                                    
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">Ketua Tim:</label>
+                                    <div class="col-md-8">
+                                        @Html.DropDownListFor(model => model.ID_KETUA, ViewBag.s_user as IEnumerable<SelectListItem>, null, new { @class = "form-control select2", @placeholder = "Semua", @required = true })
+                                        @Html.ValidationMessageFor(model => model.ID_KETUA, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">Anggota Tim:</label>
+                                    <div class="col-md-8">
+                                        @Html.DropDownList("angg[]", (IEnumerable<SelectListItem>)ViewBag.s_user,  null, new { @class = "form-control", @placeholder = "Semua", @required = true })
+                                    </div>
+                                </div>
+                                <div id="stim" style="display:none;">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3"></label>
+                                        <div class="col-md-8">
+                                            @Html.DropDownList("angg[]", (IEnumerable<SelectListItem>)ViewBag.s_user, null, new { @class = "form-control", @placeholder = "Semua", @required=true, @disabled=true})
+                                        </div>
+                                        <div class="col-md-1">
+                                            <button type="button" class="btn btn-danger deltim"><i class="fa fa-times"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="extim">
+
+                                </div>
+                                <div class="form-group" style="padding:15px;">
+                                    <button type="button" class="btn btn-xs btn-success pull-right" id="plustim">+ Tambah Anggota</button>
+                                    
+                                </div>
+                                
+                            </div>
+                            <div class="col-md-6">
+                                <div style="padding-top:8px;padding-bottom:8px">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Dok. Pendukung:</label>
+                                        <div class="col-md-7">
+                                            <input type="file" name="docs" class="form-control" required />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Tgl. Dokumen:</label>
+                                        <div class="col-md-7">
+                                            @Html.Editor("tgl_docs[]", new { htmlAttributes = new { @class = "form-control datepicker", @placeholder = "Tanggal Dokumen", @required = true, @data_date_format = "  dd M yyyy" } })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="sdoc" style="display:none">
+                                    <div style="padding-top:8px;padding-bottom:8px" id="adoc">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Dok. Pendukung:</label>
+                                            <div class="col-md-7">
+                                                <input type="file" name="docs" class="form-control" required disabled />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Tgl. Dokumen:</label>
+                                            <div class="col-md-7">
+                                                @Html.Editor("tgl_docs[]", new { htmlAttributes = new { @class = "form-control datepicker", @placeholder = "Tanggal Dokumen", @data_date_format = "  dd M yyyy" , @disabled=true, @required=true} })
+                                            </div>
+                                            <div class="col-md-1">
+                                                <button type="button" class="btn btn-danger delete"><i class="fa fa-times"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="exdoc">
+
+                                </div>
+                                <div class="form-group" style="padding:15px;">
+                                    <button class="btn btn-xs btn-success pull-right" id="plusdoc" type="button">+ Tambah Dokumen</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-success col-md-12">Submit</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+@section scripts{
+    <script>
+        
+        $(function () {
+            $('#plustim').on('click', function () {
+                $('#stim').children().clone().appendTo($('#extim'))
+                $('#extim').find('select').removeAttr('disabled')
+            });
+            $('#plusdoc').on('click', function () {
+                $('#sdoc').children().clone().appendTo($('#exdoc'))
+                $('#exdoc').find('input').removeAttr('disabled')
+                $('#exdoc').find('.datepicker').datepicker();
+            });
+            $(document).on('click', '.deltim', function () {
+                $(this).parents('.form-group').remove();
+            });
+            $(document).on('click', '.delete', function () {
+                $(this).parents('#adoc').remove();
+            });
+        })
+    </script>
+}
+
+

@@ -1,0 +1,320 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Konsultasi
+    </h1>
+    <br>
+    <button class="btn btn-success"><i class="fa fa-plus"></i> Tambahkan Konsultasi</button>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Konsultasi</li>
+    </ol>
+</section>
+<section class="content-header">
+    <h6>
+        Filter Data
+    </h6>
+    <hr>
+    <div class="col-md-3">
+        <div class="form-group">
+            <label>Pilih Departemen</label>
+            <select class="form-control">
+                <option>Semua</option>
+                <option>Departemen 1</option>
+                <option>Departemen 2</option>
+                <option>Departemen 3</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="form-group">
+            <label>Pilih Prioritas</label>
+            <select class="form-control">
+                <option>Semua</option>
+                <option>Normal</option>
+                <option>Sedang</option>
+                <option>Tinggi</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="form-group">
+            <label>Pilih Status</label>
+            <select class="form-control">
+                <option>Semua</option>
+                <option>On progress</option>
+                <option>Closed</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <br>
+        <button class="btn btn-success"><i class="fa fa-arrow-right"></i> Submit</button>
+</section>
+<!-- Main content -->
+<section class="content" style="min-height: 820px">
+
+    <!-- =========================================================== -->
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Data Table With Full Features</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Objek Konsultasi</th>
+                                <th>Departemen</th>
+                                <th>Prioritas</th>
+                                <th>Status</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>
+                                    Sertifikat Pengujian Petroganik
+                                </td>
+                                <td>AA</td>
+                                <td>Sedang</td>
+                                <td>Closed</td>
+                                <td>
+                                    <button class="btn btn-success"><i class="fa fa-eye"></i></button>
+                                    <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+                                    <button class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>
+                                    Penjualan Jasa Tanpa Kontrak
+                                </td>
+                                <td>AA</td>
+                                <td>Tinggi</td>
+                                <td>On progress</td>
+                                <td>
+                                    <button class="btn btn-success"><i class="fa fa-eye"></i></button>
+                                    <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+                                    <button class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>
+                                    Sertifikat Pengujian Petroganik 4
+                                </td>
+                                <td>AC</td>
+                                <td>Sedang</td>
+                                <td>Closed</td>
+                                <td>
+                                    <button class="btn btn-success"><i class="fa fa-eye"></i></button>
+                                    <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+                                    <button class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>
+                                    Penjualan Jasa Tanpa Kontrak 3
+                                </td>
+                                <td>AG</td>
+                                <td>Rendah</td>
+                                <td>On progress</td>
+                                <td>
+                                    <button class="btn btn-success"><i class="fa fa-eye"></i></button>
+                                    <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+                                    <button class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>
+                                    Sertifikat Pengujian Petroganik 2
+                                </td>
+                                <td>AB</td>
+                                <td>Tinggi</td>
+                                <td>On Progress</td>
+                                <td>
+                                    <button class="btn btn-success"><i class="fa fa-eye"></i></button>
+                                    <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+                                    <button class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>
+                                    Penjualan Jasa Tanpa Kontrak
+                                </td>
+                                <td>AA</td>
+                                <td>Tinggi</td>
+                                <td>On progress</td>
+                                <td>
+                                    <button class="btn btn-success"><i class="fa fa-eye"></i></button>
+                                    <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+                                    <button class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>
+                                    Sertifikat Pengujian Petroganik 4
+                                </td>
+                                <td>AC</td>
+                                <td>Sedang</td>
+                                <td>Closed</td>
+                                <td>
+                                    <button class="btn btn-success"><i class="fa fa-eye"></i></button>
+                                    <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+                                    <button class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>
+                                    Penjualan Jasa Tanpa Kontrak 3
+                                </td>
+                                <td>AG</td>
+                                <td>Rendah</td>
+                                <td>On progress</td>
+                                <td>
+                                    <button class="btn btn-success"><i class="fa fa-eye"></i></button>
+                                    <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+                                    <button class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>
+                                    Sertifikat Pengujian Petroganik 2
+                                </td>
+                                <td>AB</td>
+                                <td>Tinggi</td>
+                                <td>On Progress</td>
+                                <td>
+                                    <button class="btn btn-success"><i class="fa fa-eye"></i></button>
+                                    <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+                                    <button class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>
+                                    Penjualan Jasa Tanpa Kontrak
+                                </td>
+                                <td>AA</td>
+                                <td>Tinggi</td>
+                                <td>On progress</td>
+                                <td>
+                                    <button class="btn btn-success"><i class="fa fa-eye"></i></button>
+                                    <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+                                    <button class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>
+                                    Sertifikat Pengujian Petroganik 4
+                                </td>
+                                <td>AC</td>
+                                <td>Sedang</td>
+                                <td>Closed</td>
+                                <td>
+                                    <button class="btn btn-success"><i class="fa fa-eye"></i></button>
+                                    <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+                                    <button class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>
+                                    Penjualan Jasa Tanpa Kontrak 3
+                                </td>
+                                <td>AG</td>
+                                <td>Rendah</td>
+                                <td>On progress</td>
+                                <td>
+                                    <button class="btn btn-success"><i class="fa fa-eye"></i></button>
+                                    <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+                                    <button class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>
+                                    Sertifikat Pengujian Petroganik 2
+                                </td>
+                                <td>AB</td>
+                                <td>Tinggi</td>
+                                <td>On Progress</td>
+                                <td>
+                                    <button class="btn btn-success"><i class="fa fa-eye"></i></button>
+                                    <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+                                    <button class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>
+                                    Sertifikat Pengujian Petroganik 2
+                                </td>
+                                <td>AB</td>
+                                <td>Tinggi</td>
+                                <td>On Progress</td>
+                                <td>
+                                    <button class="btn btn-success"><i class="fa fa-eye"></i></button>
+                                    <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+                                    <button class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>No.</th>
+                                <th>Objek Konsultasi</th>
+                                <th>Departemen</th>
+                                <th>Prioritas</th>
+                                <th>Status</th>
+                                <th>Aksi</th>
+                            </tr>
+
+                        </tfoot>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+    </div>
+
+
+
+    </div>
+    <!-- /.col (LEFT) -->
+    </div>
+
+</section>
+<!-- /.content -->
+@section scripts{
+    <script>
+        $(function () {
+            $('#example1').DataTable({
+                responsive: true
+            });
+        });
+        </script>
+}

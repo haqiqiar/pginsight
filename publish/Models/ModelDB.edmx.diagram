@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="736b0398ab6e401b9ad39894df81c8f1" Name="Diagram1">
+        <EntityTypeShape EntityType="PETROKIMIAModel.DATA" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PETROKIMIAModel.DEPARTEMEN" Width="1.5" PointX="8.25" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PETROKIMIAModel.DIREKTORAT" Width="1.5" PointX="4.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PETROKIMIAModel.DOKUMEN" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PETROKIMIAModel.JENIS_DATA" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PETROKIMIAModel.JENIS_DOKUMEN" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PETROKIMIAModel.JENIS_KEGIATAN" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PETROKIMIAModel.KEGIATAN" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PETROKIMIAModel.KEGIATAN_ANGGOTA" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PETROKIMIAModel.KEGIATAN_DOC" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PETROKIMIAModel.KOMPARTEMEN" Width="1.5" PointX="6.5" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PETROKIMIAModel.M_AUDIT" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PETROKIMIAModel.REKOMENDASI" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PETROKIMIAModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PETROKIMIAModel.TEMUAN" Width="1.5" PointX="2.875" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PETROKIMIAModel.USER" Width="1.5" PointX="5.125" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PETROKIMIAModel.REKOMENDASI_DEPT" Width="1.5" PointX="7.625" PointY="10.125" IsExpanded="true" />
+        <AssociationConnector Association="PETROKIMIAModel.FK_KEGIATAN_ANGGOTA_KEGIATAN" ManuallyRouted="false" />
+        <AssociationConnector Association="PETROKIMIAModel.FK_KEGIATAN_DOC_KEGIATAN" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PETROKIMIAModel.DOKUMEN_LIBRARY" Width="1.5" PointX="11.75" PointY="8.75" />
+        <EntityTypeShape EntityType="PETROKIMIAModel.KONSULTASI" Width="1.5" PointX="11.75" PointY="11.75" />
+        <EntityTypeShape EntityType="PETROKIMIAModel.VDEPARTEMEN" Width="1.5" PointX="16.25" PointY="5" />
+        <EntityTypeShape EntityType="PETROKIMIAModel.VDIREKTORAT" Width="1.5" PointX="11.75" PointY="5.5" />
+        <EntityTypeShape EntityType="PETROKIMIAModel.VKARYAWAN" Width="1.5" PointX="0.75" PointY="12.75" />
+        <EntityTypeShape EntityType="PETROKIMIAModel.VKOMPARTEMEN" Width="1.5" PointX="14" PointY="5.25" />
+        <EntityTypeShape EntityType="PETROKIMIAModel.SDM_MST_UNITKERJA" Width="1.5" PointX="2.75" PointY="12.75" />
+        <AssociationConnector Association="PETROKIMIAModel.FK_departemen_kompartemen" />
+        <AssociationConnector Association="PETROKIMIAModel.FK_kompartemen_direktorat" />
+        <AssociationConnector Association="PETROKIMIAModel.FK_KEGIATAN_JENIS_KEGIATAN" />
+        <AssociationConnector Association="PETROKIMIAModel.FK_KEGIATAN_KEGIATAN" />
+        <AssociationConnector Association="PETROKIMIAModel.FK_KEGIATAN_VKARYAWAN_KETUA" />
+        <AssociationConnector Association="PETROKIMIAModel.FK_KEGIATAN_VKARYAWAN_PENGENDALI" />
+        <AssociationConnector Association="PETROKIMIAModel.FK_KEGIATAN_ANGGOTA_VKARYAWAN" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

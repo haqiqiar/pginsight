@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "TindakLanjut";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <header class="section-header">
+            <div class="tbl">
+                <div class="tbl-row">
+                    <div class="tbl-cell">
+                        <h3>Temuan</h3>
+                        @*<ol class="breadcrumb breadcrumb-simple">
+                                <li><a href="#">StartUI</a></li>
+                                <li><a href="#">Forms</a></li>
+                                <li class="active">Selects</li>
+                            </ol>*@
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="card box-typical-full-height">
+            <div class="card-block">
+                <h5 class="m-t-lg with-border">Cari Temuan</h5>
+                <form>
+                    <div class="form-group row">
+                        <label for="exampleSelect" class="col-sm-2 form-control-label">Objek Audit</label>
+                        <div class="col-sm-10">
+                            <select id="exampleSelect" class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-inline btn-info-outline">Cari</button>
+                </form>
+                <table id="example" class="display table table-bordered" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Temuan</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>No</th>
+                            <th>Temuan</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <td>2</td>
+                            <td>System Architect</td>
+
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Accountant</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</div>
+@section scripts{
+    <script>
+        $(function () {
+            $('#example').DataTable({
+                responsive: true
+            });
+        });
+    </script>
+}
+
+

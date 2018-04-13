@@ -1,0 +1,124 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="page-content">
+
+    <div class="container-fluid">
+        <section class="card col-md-6">
+            <header class="card-header">
+                Monitoring TL Direktorat Grafik
+            </header>
+            <div class="card-block">
+                <div id="chart"></div>
+            </div>
+        </section>
+        <div class="row">
+            <section class="card col-md-6">
+                <header class="card-header">
+                    Monitoring 
+                </header>
+                <div class="card-block">
+                    <div id="piechart"></div>
+                </div>
+            </section>
+        </div>
+        
+        @*<div class="row">
+            <section class="card col-md-6">
+                <header class="card-header">
+                    Monitoring Tindak Lanjut
+                </header>
+                <div class="card-block">
+                    <div id="bar-chart"></div>
+                </div>
+            </section>
+
+            <section class="card col-md-6">
+                <header class="card-header">
+                    Search Engine
+                </header>
+                <div class="card-block">
+                    <div id="area-chart"></div>
+                </div>
+            </section>
+        </div>*@
+
+
+
+
+
+
+    </div><!--.container-fluid-->
+</div><!--.page-content-->
+@section scripts{
+<script type="text/javascript">
+    var url = '@Url.Action("Kompartemen", "Dashboard")';
+        function getElement(id) {
+            //$.ajax({
+            //    url: url,
+            //    type: 'POST',
+            //    data: { id: id }
+            //});
+            window.location.href = "/Dashboard/Kompartemen?id=" + id;
+        };
+        var chart = c3.generate({
+            bindto: "#chart",
+            data: {
+                x: 'x',
+                columns: [
+                    ['x', 'KOMPARTEMEN 1', 'KOMPARTEMEN 2', 'KOMPARTEMEN 3'],
+                    ['Completed', 25, 30, 20],
+                    ['OnProgress', 12, 19, 50],
+
+                ],
+
+
+                type: 'bar',
+                onclick: function (d, element, i) {
+                   
+                    getElement(d.x);
+                    
+                },
+                groups: [
+                    ['Completed', 'OnProgress']
+                ],
+
+                selection: {
+                    enabled: true
+                },
+
+            },
+            axis: {
+                x: {
+                    type: 'category'
+                }
+            },
+
+            color: {
+                pattern: ['#6da900', '#a90000']
+            },
+            grid: {
+                y: {
+                    lines: [{ value: 0 }]
+                }
+            }
+        });
+        var chart = c3.generate({
+            bindto: "#piechart",
+            data: {
+                // iris data from R
+                columns: [
+                    ['Completed', 30],
+                    ['Progress', 120],
+                ],
+                type: 'pie',
+                onclick: function (d, i) { console.log("onclick", d, i); },
+                onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+                onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+            }
+        });
+
+</script>
+}

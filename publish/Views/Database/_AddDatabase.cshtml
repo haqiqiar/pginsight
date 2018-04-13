@@ -1,0 +1,50 @@
+﻿@model PETROKIMIA.Models.DatabaseViewModels
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h4 class="modal-title" id="MyModalTitle">Add New Database</h4>
+</div>
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "AddDatabase",  enctype = "multipart/form-data" }))
+{
+    @*<form method="post" class="ui large pengajuan form" action=@Url.Action("Add", "Database" ) enctype="multipart/form-data">*@
+    @Html.AntiForgeryToken()
+
+    <div class="modal-body">
+
+        <div class="form-group row">
+            @Html.LabelFor(m => m.Nama, new { @class = "col-sm-2 form-control-label" })
+            <div class="col-sm-10">
+                <p class="form-control-static">
+                    @Html.TextBoxFor(m => m.Nama, new { @class = "form-control", @required = true })
+                    @Html.ValidationMessageFor(m => m.Nama, "", new { @class = "text-danger" })
+                </p>
+            </div>
+        </div>
+        <div class="form-group row">
+            @Html.LabelFor(m => m.Dokumen, new { @class = "col-sm-2 form-control-label" })
+            <div class="col-sm-10">
+                <p class="form-control-static">
+                    @Html.TextBoxFor(m => m.Dokumen, new { @type = "file", @class = "form-control", @required = true })
+                    @Html.ValidationMessageFor(m => m.Dokumen, "", new { @class = "text-danger" })
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn" data-dismiss="modal">Cancel</button>
+        <input type="submit" class="btn btn-primary" value="Save" id="btnSubmit" />
+    </div>
+}
+
+<script>
+    $(document).ready(function () {
+        $.validator.unobtrusive.parse('#AddDatabase');
+        $("#btnSubmit").click(function () {
+            if (!$("#AddDatabase").valid()) {
+                return false;
+            }
+        });
+    });
+</script>

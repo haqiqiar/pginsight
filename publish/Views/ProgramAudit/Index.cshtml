@@ -1,0 +1,142 @@
+﻿@model PETROKIMIA.Models.MonitoringTLViewModels.vwMonitoring
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <header class="section-header">
+            <div class="tbl">
+                <div class="tbl-row">
+                    <div class="tbl-cell">
+                        <h3>Langkah Kerja Audit</h3>
+                        @*<ol class="breadcrumb breadcrumb-simple">
+                                <li><a href="#">StartUI</a></li>
+                                <li><a href="#">Forms</a></li>
+                                <li class="active">Selects</li>
+                            </ol>*@
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="card box-typical-full-height">
+            <div class="row" style="padding: 15px;">
+                <div class="form-group col-sm-4">
+                    <label>Kompartment</label>
+                    <select class="form-control">
+                        <option>Adm. Keuangan</option>
+                        <option>Pabrik II dan III</option>
+                        <option>Pengadaan</option>
+                        <option>Pengembangan</option>
+                        <option>Prasarana &Aacute; Utilisasi</option>
+                        <option>Rendalha</option>
+                    </select>
+                </div>
+                <div class="form-group col-sm-4">
+                    <label>Auditor</label>
+                    <select class="form-control">
+                        <option>AA</option>
+                        <option>AO</option>
+                    </select>
+                </div>
+                <button class="btn btn-success col-sm-3" style="margin-top: 24px;">Tampilkan</button>
+            </div>
+            <div class="card-block">
+                <table id="example" class="display table table-bordered" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Kompartemen<br />(Unit Kerja)</th>
+                            <th>Obyek Audit</th>
+                            <th>Langkah Kerja</th>
+                            <th>Sub Bagian</th>
+                            <th>Paraf</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>#</th>
+                            <th>Kompartemen<br />(Unit Kerja)</th>
+                            <th>Obyek Audit</th>
+                            <th>Sub Bagian</th>
+                            <th>Langkah Kerja</th>
+                            <th>Paraf</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Pengadaan Barang, Pengadaan Jasa, PPBJ</td>
+                            <td>PKPT Kompartemen Audit Intern 2017</td>
+                            <td>Penilaian Tingkat Pengendalian Operasional Kegiatan Pengadaan Barang dan jasa</td>
+                            <td>Pemeriksaan pengendalian internal</td>
+                            <td>Ya</td>
+                            <td>
+                                <button class="btn col-sm-12 btn-success"><i class="fa fa-eye"></I></button>
+                                <button class="btn col-sm-12 btn-warning"><i class="fa fa-edit"></I></button>
+                                <button class="btn col-sm-12 btn-danger"><i class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Pengadaan Barang, Pengadaan Jasa, PPBJ</td>
+                            <td>PKPT Kompartemen Audit Intern 2017</td>
+                            <td>Penilaian Efektivitas Pengelolaan Risiko Kegiatan Pengadaan Barang dan Jasa</td>
+                            <td>Lakukan evaluasi atas kelengkapan identifikasi risiko</td>
+                            <td>Ya</td>
+                            <td>
+                                <button class="btn col-sm-12 btn-success"><i class="fa fa-eye"></i></button>
+                                <button class="btn col-sm-12 btn-warning"><i class="fa fa-edit"></i></button>
+                                <button class="btn col-sm-12 btn-danger"><i class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Pengadaan Barang, Pengadaan Jasa, PPBJ</td>
+                            <td>PKPT Kompartemen Audit Intern 2017</td>
+                            <td>Penilaian Efektivitas Pengelolaan Risiko Kegiatan Pengadaan Barang dan Jasa</td>
+                            <td>Lakukan evaluasi atas penilaian dampak peluang</td>
+                            <td>Ya</td>
+                            <td>
+                                <button class="btn col-sm-12 btn-success"><i class="fa fa-eye"></i></button>
+                                <button class="btn col-sm-12 btn-warning"><i class="fa fa-edit"></i></button>
+                                <button class="btn col-sm-12 btn-danger"><i class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Pengadaan Barang, Pengadaan Jasa, PPBJ</td>
+                            <td>PKPT Kompartemen Audit Intern 2017</td>
+                            <td>Penilaian Efektivitas Pengelolaan Risiko Kegiatan Pengadaan Barang dan Jasa</td>
+                            <td>Lakukan evaluasi atas pengendalian risiko</td>
+                            <td>Ya</td>
+                            <td>
+                                <button class="btn col-sm-12 btn-success"><i class="fa fa-eye"></i></button>
+                                <button class="btn col-sm-12 btn-warning"><i class="fa fa-edit"></i></button>
+                                <button class="btn col-sm-12 btn-danger"><i class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</div>
+@section scripts{
+    <script>
+        $(function () {
+            $('#example').DataTable({
+                responsive: true,
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            });
+        });
+    </script>
+}
+
+

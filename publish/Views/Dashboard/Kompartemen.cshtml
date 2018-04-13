@@ -1,0 +1,209 @@
+﻿
+@{
+    ViewBag.Title = "Kompartemen";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Dashboard
+        <small>Kompartemen</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="Dashboard/index"><i class="fa fa-dashboard"></i>Dashboard Utama</a></li>
+        <li class="active">Dashboard Kompartemen</li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content">
+
+    <!-- =========================================================== -->
+    <div class="row">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-yellow">
+                <span class="info-box-icon"><i class="fa fa-binoculars"></i></span>
+                <div class="info-box-content">
+                    <span class="info-box-text">Total Obyek Audit</span>
+                    <span class="info-box-number">41,410</span>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 70%"></div>
+                    </div>
+                    <span class="progress-description">
+                        Summary Obyek Audit
+                    </span>
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-green">
+                <span class="info-box-icon"><i class="fa fa-archive"></i></span>
+                <div class="info-box-content">
+                    <span class="info-box-text">Total KKA</span>
+                    <span class="info-box-number">410</span>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 70%"></div>
+                    </div>
+                    <span class="progress-description">
+                        Summary KKA
+                    </span>
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-yellow">
+                <span class="info-box-icon"><i class="fa fa-th"></i></span>
+                <div class="info-box-content">
+                    <span class="info-box-text">Total PKPT</span>
+                    <span class="info-box-number">2410</span>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 70%"></div>
+                    </div>
+                    <span class="progress-description">
+                        Summary PKPT
+                    </span>
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-green">
+                <span class="info-box-icon"><i class="fa fa-barcode"></i></span>
+                <div class="info-box-content">
+                    <span class="info-box-text">Total Temuan TL</span>
+                    <span class="info-box-number">7410</span>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 70%"></div>
+                    </div>
+                    <span class="progress-description">
+                        Summary Temuan
+                    </span>
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-md-6">
+            <!-- LINE CHART -->
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Monitoring Kompartemen Grafik</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <div class="chart">
+                        <div id="chart" style="height:250px"></div>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+        <div class="col-md-6">
+            <!-- /.box -->
+            <!-- BAR CHART -->
+            <div class="box box-success">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Monitoring TL</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <div class="chart">
+                        <div id="piechart" style="height:230px"></div>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- /.col (RIGHT) -->
+    </div>
+</section>
+<!-- /.content -->
+@section scripts{
+    <script type="text/javascript">
+
+    var url = '@Url.Action("Dashboard", "Departemen")';
+        function getElement(id) {
+            window.location.href = "/Dashboard/Departemen?id=" + id;
+        };
+        var chart = c3.generate({
+            bindto: "#chart",
+            data: {
+                x: 'x',
+                columns: [
+                    ['x', 'Departemen 1', 'Departemen 2', 'Departemen 3'],
+                    ['Completed', 50, 30, 60],
+                    ['OnProgress', 43, 25, 50],
+
+                ],
+
+
+                type: 'bar',
+                onclick: function (d, element, i) {
+                    //console.log(d);
+                    //console.log(element);
+                    getElement(d.x);
+                    //console.log(i);
+                },
+                groups: [
+                    ['Completed', 'OnProgress']
+                ],
+
+                selection: {
+                    enabled: true
+                },
+
+            },
+            axis: {
+                x: {
+                    type: 'category'
+                }
+            },
+
+            color: {
+                pattern: ['#6da900', '#a90000']
+            },
+            grid: {
+                y: {
+                    lines: [{ value: 0 }]
+                }
+            }
+        });
+        var chart = c3.generate({
+            bindto: "#piechart",
+            data: {
+                // iris data from R
+                columns: [
+                    ['Completed', 30],
+                    ['Progress', 60],
+                ],
+                type: 'pie',
+                onclick: function (d, i) { console.log("onclick", d, i); },
+                onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+                onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+            }
+        });
+
+    </script>
+}

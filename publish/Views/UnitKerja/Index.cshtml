@@ -1,0 +1,142 @@
+﻿@model PETROKIMIA.Models.MonitoringTLViewModels.vwMonitoring
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <header class="section-header">
+            <div class="tbl">
+                <div class="tbl-row">
+                    <div class="tbl-cell">
+                        <h3>List Unit Kerja</h3>
+                        @*<ol class="breadcrumb breadcrumb-simple">
+                                <li><a href="#">StartUI</a></li>
+                                <li><a href="#">Forms</a></li>
+                                <li class="active">Selects</li>
+                            </ol>*@
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="card box-typical-full-height">
+            <div class="row" style="padding: 15px;">
+                <div class="form-group col-sm-4">
+                    <label>Unit Kerja</label>
+                    <select class="form-control">
+                        <option>Adm. Keuangan</option>
+                        <option>Pabrik II dan III</option>
+                        <option>Pengadaan</option>
+                        <option>Pengembangan</option>
+                        <option>Prasarana &Aacute; Utilisasi</option>
+                        <option>Rendalha</option>
+                    </select>
+                </div>
+                
+                <button class="btn btn-success col-sm-3" style="margin-top: 24px;">Tampilkan</button>
+            </div>
+            <div class="card-block">
+                <table id="example" class="display table table-bordered" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nama (Unit Kerja)</th>
+                            <th>ID Unit Kerja</th>
+                            <th>Departemen</th> 
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>#</th>
+                            <th>Nama (Unit Kerja)</th>
+                            <th>ID Unit Kerja</th>
+                            <th>Departemen</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Adm. Keuangan</td> 
+                            <td>20</td>
+                            <td>AA</td>
+                             <td>
+                                <button class="btn col-sm-6 btn-success"><i class="fa fa-eye"></i></button>
+                                <button class="btn col-sm-6 btn-warning"><i class="fa fa-edit"></i></button>
+                                <button class="btn col-sm-6 btn-danger"><i class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Adm. Keuangan</td> 
+                            <td>9</td>
+                            <td>AA</td>
+                             
+                            <td>
+                                <button class="btn col-sm-6 btn-success"><i class="fa fa-eye"></i></button>
+                                <button class="btn col-sm-6 btn-warning"><i class="fa fa-edit"></i></button>
+                                <button class="btn col-sm-6 btn-danger"><i class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td>Pabrik II dan III</td>
+                            
+                            <td>20</td>
+                            <td>AO</td>
+                            
+                            <td>
+                                <button class="btn col-sm-6 btn-success"><i class="fa fa-eye"></i></button>
+                                <button class="btn col-sm-6 btn-warning"><i class="fa fa-edit"></i></button>
+                                <button class="btn col-sm-6 btn-danger"><i class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>4</td>
+                            <td>Pabrik II dan III</td>
+                              <td>20</td>
+                            <td>AO</td>
+                             <td>
+                                <button class="btn col-sm-6 btn-success"><i class="fa fa-eye"></i></button>
+                                <button class="btn col-sm-6 btn-warning"><i class="fa fa-edit"></i></button>
+                                <button class="btn col-sm-6 btn-danger"><i class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>5</td>
+                            <td>Pengadaan </td>
+                             <td>25</td>
+                            <td>Ao</td>
+                             <td>
+                                <button class="btn col-sm-6 btn-success"><i class="fa fa-eye"></i></button>
+                                <button class="btn col-sm-6 btn-warning"><i class="fa fa-edit"></i></button>
+                                <button class="btn col-sm-6 btn-danger"><i class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</div>
+@section scripts{
+    <script>
+        $(function () {
+            $('#example').DataTable({
+                responsive: true,
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            });
+        });
+    </script>
+}
+
+

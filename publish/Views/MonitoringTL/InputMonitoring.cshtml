@@ -1,0 +1,106 @@
+﻿@model PETROKIMIA.Models.MonitoringTLViewModels.vwMonitoring
+@{
+    ViewBag.Title = "InputMonitoring";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="page-content">
+    <div class="container-fluid">
+        <header class="section-header">
+            <div class="tbl">
+                <div class="tbl-row">
+                    <div class="tbl-cell">
+                        <h3>Tambah Data</h3>
+                        @Html.ValidationMessage("Error")
+                        @Html.ValidationMessage("Sukses")
+
+                        @*<ol class="breadcrumb breadcrumb-simple">
+                                <li><a href="#">StartUI</a></li>
+                                <li><a href="#">Forms</a></li>
+                                <li class="active">Selects</li>
+                            </ol>*@
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="card box-typical-full-height">
+            <div class="card-block">
+                @using (Html.BeginForm("InputMonitoring", "MonitoringTL", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @*<div class="form-group row">
+                        @Html.LabelFor(m => m.OBJEK_AUDIT, new { @class = "col-sm-2 form-control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.OBJEK, new {  @class = "form-control" })@
+
+
+                            @Html.DropDownListFor(m => m.OBJEK_AUDIT, Model.getNamaAudit, new { @class = "form-control" })
+                            @Html.HiddenFor(m => m.OBJEK_AUDIT)
+
+                            @Html.ValidationMessageFor(m => m.OBJEK_AUDIT, "", new { @class = "text-danger" })
+                        </div>
+                    </div>*@
+    <div class="form-group row">
+        @Html.LabelFor(m => m.OBJEK_AUDIT, new { @class = "col-sm-2 form-control-label" })
+        <div class="col-sm-10">
+            <p class="form-control-static">
+                @Html.TextBoxFor(m => m.OBJEK_AUDIT, new { @class = "form-control", @placeholder = "Objek Audit" })
+                @Html.ValidationMessageFor(m => m.OBJEK_AUDIT, "", new { @class = "text-danger" })
+            </p>
+        </div>
+    </div>
+                    <div class="form-group row">
+                        @Html.LabelFor(m => m.TEMUAN, new { @class = "col-sm-2 form-control-label" })
+                        <div class="col-sm-10">
+                            <p class="form-control-static">
+                                @Html.TextBoxFor(m => m.TEMUAN, new { @class = "form-control", @placeholder = "Temuan" })
+                                @Html.ValidationMessageFor(m => m.TEMUAN, "", new { @class = "text-danger" })
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        @Html.LabelFor(m => m.REKOMEMNDASI, new { @class = "col-sm-2 form-control-label" })
+                        <div class="col-sm-10">
+                            <p class="form-control-static">
+                                @Html.TextAreaFor(m => m.REKOMEMNDASI, new { @class = "form-control", @placeholder = "Rekomendasi" })
+                                @Html.ValidationMessageFor(m => m.REKOMEMNDASI, "", new { @class = "text-danger" })
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        @Html.LabelFor(m => m.TINDAK_LANJUT, new { @class = "col-sm-2 form-control-label" })
+                        <div class="col-sm-10">
+                            <p class="form-control-static">
+                                @Html.TextAreaFor(m => m.TINDAK_LANJUT, new { @class = "form-control", @placeholder = "Tindak Lanjut" })
+                                @Html.ValidationMessageFor(m => m.TINDAK_LANJUT, "", new { @class = "text-danger" })
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        @Html.LabelFor(m => m.STATUS, new { @class = "col-sm-2 form-control-label" })
+                        <div class="col-md-10">
+                            @*@Html.TextBoxFor(m => m.OBJEK, new {  @class = "form-control" })*@
+
+
+                            @Html.DropDownListFor(m => m.STATUS, Model.getJenisStatus, new { @class = "form-control" })
+                            @Html.HiddenFor(m => m.STATUS)
+
+                            @Html.ValidationMessageFor(m => m.STATUS, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        @Html.LabelFor(m => m.UNIT_KERJA, new { @class = "col-sm-2 form-control-label" })
+                        <div class="col-sm-10">
+                            <p class="form-control-static">
+                                @Html.TextAreaFor(m => m.UNIT_KERJA, new { @class = "form-control", @placeholder = "Unit Kerja" })
+                                @Html.ValidationMessageFor(m => m.UNIT_KERJA, "", new { @class = "text-danger" })
+                            </p>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-inline btn-success">Tambahkan</button>
+
+                }
+
+            </div>
+        </section>
+    </div>
+</div>
+

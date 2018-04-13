@@ -1,0 +1,166 @@
+﻿@model PETROKIMIA.Models.MonitoringTLViewModels.vwMonitoring
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <header class="section-header">
+            <div class="tbl">
+                <div class="tbl-row">
+                    <div class="tbl-cell">
+                        <h3>Program Kerja Pengawasan Tahunan (PKPT)</h3>
+                        @*<ol class="breadcrumb breadcrumb-simple">
+                                <li><a href="#">StartUI</a></li>
+                                <li><a href="#">Forms</a></li>
+                                <li class="active">Selects</li>
+                            </ol>*@
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="card box-typical-full-height">
+            <div class="row" style="padding: 15px;">
+                <div class="form-group col-sm-4">
+                    <label>Kompartment</label>
+                    <select class="form-control">
+                        <option>Adm. Keuangan</option>
+                        <option>Pabrik II dan III</option>
+                        <option>Pengadaan</option>
+                        <option>Pengembangan</option>
+                        <option>Prasarana &Aacute; Utilisasi</option>
+                        <option>Rendalha</option>
+                    </select>
+                </div>
+                <div class="form-group col-sm-4">
+                    <label>Auditor</label>
+                    <select class="form-control">
+                        <option>AA</option>
+                        <option>AO</option>
+                    </select>
+                </div>
+                <button class="btn btn-success col-sm-3" style="margin-top: 24px;">Tampilkan</button>
+            </div>
+            <div class="card-block">
+                <table id="example" class="display table table-bordered" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Kompartemen<br />(Unit Kerja)</th>
+                            <th>Obyek Audit</th>
+                            <th>Sumber</th>
+                            <th>Skor</th>
+                            <th>Auditor</th>
+                            <th>Tgl Pelaksanaan</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>#</th>
+                            <th>Kompartemen<br />(Unit Kerja)</th>
+                            <th>Obyek Audit</th>
+                            <th>Sumber</th>
+                            <th>Skor</th>
+                            <th>Auditor</th>
+                            <th>Tgl Pelaksanaan</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Adm. Keuangan</td>
+                            <td>Perhitungan Nilai Subsidi</td>
+                            <td>Keu-AKU-Akun-Budg-04</td>
+                            <td>20</td>
+                            <td>AA</td>
+                            <td>21 Feb-19 Mar</td>
+                            <td>
+                                <button class="btn col-sm-6 btn-success"><i class="fa fa-eye"></i></button>
+                                <button class="btn col-sm-6 btn-warning"><i class="fa fa-edit"></i></button>
+                                <button class="btn col-sm-6 btn-danger"><i class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Adm. Keuangan</td>
+                            <td>Laporan Perpajakan</td>
+                            <td>Keu-KEU-Keu-Pjak-13</td>
+                            <td>9</td>
+                            <td>AA</td>
+                            <td>21 Feb-19 Mar</td>
+                            <td>
+                                <button class="btn col-sm-6 btn-success"><i class="fa fa-eye"></i></button>
+                                <button class="btn col-sm-6 btn-warning"><i class="fa fa-edit"></i></button>
+                                <button class="btn col-sm-6 btn-danger"><i class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td>Pabrik II dan III</td>
+                            <td>Keandalan Pabrik II</td>
+                            <td>Top High Risk 2017</td>
+                            <td>20</td>
+                            <td>AO</td>
+                            <td>21 Feb-19 Mar</td>
+                            <td>
+                                <button class="btn col-sm-6 btn-success"><i class="fa fa-eye"></i></button>
+                                <button class="btn col-sm-6 btn-warning"><i class="fa fa-edit"></i></button>
+                                <button class="btn col-sm-6 btn-danger"><i class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>4</td>
+                            <td>Pabrik II dan III</td>
+                            <td>Keandalan Pabrik III</td>
+                            <td>Top High Risk</td>
+                            <td>20</td>
+                            <td>AO</td>
+                            <td>21 Feb-19 Mar</td>
+                            <td>
+                                <button class="btn col-sm-6 btn-success"><i class="fa fa-eye"></i></button>
+                                <button class="btn col-sm-6 btn-warning"><i class="fa fa-edit"></i></button>
+                                <button class="btn col-sm-6 btn-danger"><i class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>5</td>
+                            <td>Pengadaan </td>
+                            <td>Losses Bahan baku</td>
+                            <td>Top High Risk</td>
+                            <td>25</td>
+                            <td>Ao</td>
+                            <td>21 Feb-19 Mar</td>
+                            <td>
+                                <button class="btn col-sm-6 btn-success"><i class="fa fa-eye"></i></button>
+                                <button class="btn col-sm-6 btn-warning"><i class="fa fa-edit"></i></button>
+                                <button class="btn col-sm-6 btn-danger"><i class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</div>
+@section scripts{
+    <script>
+        $(function () {
+            $('#example').DataTable({
+                responsive: true,
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            });
+        });
+    </script>
+}
+
+
